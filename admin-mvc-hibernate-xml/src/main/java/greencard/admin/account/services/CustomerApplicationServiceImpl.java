@@ -1,5 +1,8 @@
 package greencard.admin.account.services;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -138,8 +141,7 @@ public class CustomerApplicationServiceImpl implements CustomerApplicationServic
 		int userId = Integer.parseInt(customerId);
 		
 //		Date date= new Date();
-//		long time = date.getTime();
-//		Timestamp timeStamp = new Timestamp(time);
+//		Timestamp timeStamp = new Timestamp(date.getTime());
 		
 		try {
 			
@@ -161,7 +163,7 @@ public class CustomerApplicationServiceImpl implements CustomerApplicationServic
 			}
 			
 		} catch (Exception e) {
-			System.out.println("Throw null pointer exception ...");
+			System.out.println("Throw null pointer exception ..." + e);
 			e.getMessage();
 		}
 		
