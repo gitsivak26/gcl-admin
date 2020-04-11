@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="greencard.admin.account.model">
+	<class name="CustomerPayment" table="Payment">
+		<id name="paymentId" type = "int" column="paymentId">
+			<generator class="native" />
+		</id>
+		<property name="productId" column="productId" type="int"/>
+		<property name="paymentDate" column="paymentDate" type="timestamp" />
+		<property name="paymentMethod" column="paymentMethod" type="int" />
+		<property name="cardName" column="cardName" type="string"/>
+		<property name="approvalCode" column="approvalCode" type="string" />
+		<property name="oid" column="oid" type="int" />
+		<property name="amount" column="amount" type="float"/>
+		<property name="billingAddress1" column="billingAddress1" type="string"/>
+		<property name="billingCountry" column="billingCountry" type="string"/>
+	</class>
+	
+	<query name="payment_findByAccountId">
+		<![CDATA[from CustomerPayment where oid = :accountId]]>
+	</query>
+	
+</hibernate-mapping>
