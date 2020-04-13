@@ -16,8 +16,8 @@
 		<property name="faceProcessorErrorFlaggedStatus" column="faceProcessorErrorFlaggedStatus" type="int"/>
 	</class>
 	
-	<query name="Photo_findByAccountId">
+	<!-- <query name="Photo_findByAccountId">
 		<![CDATA[from CustomerPhotograph where userId = :accountId]]>
-	</query>
+	</query> -->
 	
 </hibernate-mapping>

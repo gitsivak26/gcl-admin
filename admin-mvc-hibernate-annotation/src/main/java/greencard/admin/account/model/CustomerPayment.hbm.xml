@@ -19,8 +19,8 @@
 		<property name="billingCountry" column="billingCountry" type="string"/>
 	</class>
 	
-	<query name="payment_findByAccountId">
+	<!-- <query name="payment_findByAccountId">
 		<![CDATA[from CustomerPayment where oid = :accountId]]>
-	</query>
+	</query> -->
 	
 </hibernate-mapping>

@@ -9,7 +9,7 @@
 			<property name="updatedDate" column="updatedDate" type="timestamp" />
 		</class>
 		
-		<query name="verifySkipByUserId">
+		<!-- <query name="verifySkipByUserId">
 			<![CDATA[from SkipSubmission where userId = :userId]]>
-		</query>
+		</query> -->
 	</hibernate-mapping>

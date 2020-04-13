@@ -70,7 +70,7 @@
 				
 				<div class="info-section">
 					<div class="name-section">
-						<a href="/admin" style="color: white;">Home</a> |  
+						<a href="/adminMVCHXML" style="color: white;">Home</a> |  
 						<a href="logout" style="color: white;">SignOut</a>
 					</div>
 				</div>
@@ -86,7 +86,7 @@
 				<div class="application-section">
 					<div class="top-action">
 						<div class="delete-section">
-							<form name="upgradeApplication" action="/admin/upgradeApplication" method="post">
+							<form name="upgradeApplication" action="/adminMVCHXML/upgradeApplication" method="post">
 								<input type="hidden" name="customerId" value="${customerId}" />
 								<input class="action-btn" type="submit" name="upgradePayment" value="Upgrade Application" />
 							</form>
@@ -95,7 +95,7 @@
 						</div>
 					
 						<div class="skip-section">
-							<form name="downgradeApplication" action="/admin/downgradeApplication" method="post">
+							<form name="downgradeApplication" action="/adminMVCHXML/downgradeApplication" method="post">
 								<input type="hidden" name="customerId" value="${customerId}" />
 								<input class="action-btn" type="submit" name="downgradeApplication" value="Downgrade Application" />
 							</form>
@@ -104,7 +104,7 @@
 						</div>
 						
 						<div class="skip-section">
-							<form name="refundPayment" action="/admin/refundPayment" method="post">
+							<form name="refundPayment" action="/adminMVCHXML/refundPayment" method="post">
 								<input type="hidden" name="customerId" value="${customerId}" />
 								<input class="action-btn" type="submit" name="refundPayment" value="Refund Payment" />
 							</form>

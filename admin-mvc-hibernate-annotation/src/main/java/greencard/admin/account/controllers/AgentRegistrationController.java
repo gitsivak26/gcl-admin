@@ -1,4 +1,4 @@
-package greencard.admin.account.controllers;
+	package greencard.admin.account.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +19,7 @@ import greencard.admin.account.services.AgentServices;
 public class AgentRegistrationController {
 	
 	@Autowired
-	AgentServices registrationService;
+	AgentServices agentService;
 	
 	
 	private final static String SUCCESS_PAGE = "actions";
@@ -35,7 +35,7 @@ public class AgentRegistrationController {
 		
 		System.out.println("GET Method Called ....");
 		
-		boolean signedIn = registrationService.signedIn(request, response, session);
+		boolean signedIn = agentService.signedIn(request, response, session);
 		System.out.println("Signedin Status = " + signedIn);
 		
 		if (signedIn) {
@@ -54,23 +54,23 @@ public class AgentRegistrationController {
 			HttpSession session, 
 			@ModelAttribute("agent") Agent agent, Model model) {
 		
-		System.out.println("POST method called ....");
+		System.out.println("POST method called ...." + agent.getEmail() + "    " + agent.getPassword());
 		
-		boolean signedIn = registrationService.signedIn(request, response, session);
+		boolean signedIn = agentService.signedIn(request, response, session);
 		
 		if (signedIn) {
 			System.out.println("Controller - User already in session ...");
 			return SUCCESS_PAGE;
 		}
 		
-		boolean registeredUser = registrationService.isRegisteredUser(agent.getEmail());
+		boolean registeredUser = agentService.isRegisteredUser(agent.getEmail());
 		
 		if(registeredUser) {
 			System.out.println("Controller - User already exists ....");
 			return LOGIN_PAGE;
 		}
 		
-		registrationService.saveDetails(agent);
+		agentService.saveDetails(agent);
 		
 		System.out.println("Controller - " + agent.getFirstName());
 		System.out.println("Controller - " + agent.getLastName());

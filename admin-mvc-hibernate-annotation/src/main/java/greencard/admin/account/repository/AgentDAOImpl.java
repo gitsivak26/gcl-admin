@@ -1,114 +1,62 @@
 package greencard.admin.account.repository;
 
-import java.util.Iterator;
-import java.util.List;
+import org.hibernate.Criteria;
+//import org.hibernate.Query;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import greencard.admin.account.model.Agent;
-import greencard.admin.account.utils.DBSession;
 
 @Repository
 public class AgentDAOImpl implements AgentDAO {
-	
 	@Autowired
-	DBSession dbSession;
+	private SessionFactory sessionFactory;
 	
-	Agent user;
+//	public AgentDAOImpl(SessionFactory sessionFactory) {
+//		this.sessionFactory = sessionFactory;
+//	}
 	
-	public void save(Agent user) {
-		Session session = null;
-		Transaction transaction;
-		try {
-			
-			session = dbSession.getSession();
-			
-			transaction = session.beginTransaction();
-			session.persist(user);
-			transaction.commit();
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}finally{
-			if (session != null) {
-				session.close();
-			}
-		}
+	@Override
+	@Transactional
+	public void saveAgent(Agent user) {
+		sessionFactory.getCurrentSession().saveOrUpdate(user);
 	}
 	
 	@Override
+	@Transactional
 	public Agent findByUserID(int agclid) {
+		System.out.println("********** Find By UserId in DAO ***********");
 		
-		Session session = null;
-		Transaction transaction;
-		
-		try {
-			
-			session = dbSession.getSession();
-			
-			transaction = session.beginTransaction();
-			
-			Query query = session.getNamedQuery("SQL_findByUserId");
-			query.setInteger("userId", agclid);
-			
-			List list = query.list();
-			
-			Iterator iterator = list.iterator();
-			
-			while (iterator.hasNext()) {
-				user = (Agent) iterator.next();
-			}
-			
-			transaction.commit();
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if(session != null) {
-				session.close();
-			}
-		}
-		
-		return user;
+		return (Agent) sessionFactory.getCurrentSession().get(Agent.class, agclid);
 	}
 	
 	@Override
+	@Transactional
 	public Agent findByEmailID(String email) {
 		
 		System.out.println("DB .................... " + email);
 		
-		Session session = null;
-		Transaction transaction;
-		user = null;
+		// Way 1
+//		Query query = sessionFactory.getCurrentSession().createQuery("from Admin where email = :email");
+//		query.setString("email", email);
 		
-		try {
-			
-			session = dbSession.getSession();
-			
-			transaction = session.beginTransaction();
-			Query query = session.getNamedQuery("HQL_findByEmailId");
-			query.setString("email", email);
-			
-			List list = query.list();
-			
-			Iterator iterator = list.iterator();
-			
-			while (iterator.hasNext()) {
-				user = (Agent) iterator.next();
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if(session != null) {
-				session.close();
-			}
+//		if (query.list().size() > 0) {
+//			return (Agent) query.list().get(0);
+//		} else {
+//			return null;
+//		}
+		
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Agent.class);
+		criteria.add(Restrictions.eq("email", email));
+		
+		if (criteria.list().size() > 0) {
+			return (Agent) criteria.list().get(0);
+		} else {
+			return null;
 		}
-		return user;
 	}
 }

@@ -24,8 +24,8 @@
 		<property name="photoId" column="photoId" type="int"/>
 	</class>
 	
-	<query name="findByApplicationId">
+	<!-- <query name="findByApplicationId">
 		<![CDATA[from Applicant where applicationId = :applicationId]]>
-	</query>
+	</query> -->
 	
 </hibernate-mapping>

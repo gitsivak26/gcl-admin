@@ -5,8 +5,7 @@ import java.util.Date;
 
 public class Agent {
 	 Date date= new Date();
-	 long time = date.getTime();
-	 Timestamp ts = new Timestamp(time);
+	 Timestamp ts = new Timestamp(date.getTime());
 	 
 	private int userId;
 	private String email;
@@ -93,7 +92,7 @@ public class Agent {
 
 	@Override
 	public String toString() {
-		return "User [date=" + date + ", time=" + time + ", ts=" + ts + ", userId=" + userId + ", email=" + email
+		return "User [date=" + date + ", ts=" + ts + ", userId=" + userId + ", email=" + email
 				+ ", password=" + password + ", firstName=" + firstName + ", lastName=" + lastName + ", role=" + role
 				+ ", createdDate=" + createdDate + ", accountStatus=" + accountStatus + ", lastLoginDate="
 				+ lastLoginDate + "]";

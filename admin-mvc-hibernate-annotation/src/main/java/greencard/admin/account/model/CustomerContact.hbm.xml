@@ -16,8 +16,8 @@
 		<property name="email" column="email" type="string"/>
 	</class>
 	
-	<query name="findByuserId">
+	<!-- <query name="findByuserId">
 		<![CDATA[from CustomerContact where userId = :accountId]]>
-	</query>
+	</query> -->
 	
 </hibernate-mapping>

@@ -17,17 +17,4 @@
 		<property name="accountStatus" column="accountStatus" type="int"/>
 		<property name="lastLoginDate" column="lastLoginDate" type="timestamp"/>
 	</class>
-	
-	<query name="HQL_findByEmail">
-		<![CDATA[from Agent where email = :email]]>
-	</query>
-	
-	<sql-query name="SQL_findByUserId">
-		<return alias="Admin" class="greencard.admin.account.model.Agent" />
-		<![CDATA[select * from Admin where userId = :userId]]>
-	</sql-query>
-	
-	<query name="HQL_findByEmailId">
-		<![CDATA[from Agent where email = :email]]>
-	</query>
 </hibernate-mapping>

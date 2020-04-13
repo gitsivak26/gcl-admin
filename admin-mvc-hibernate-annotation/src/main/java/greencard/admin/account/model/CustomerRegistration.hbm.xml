@@ -21,7 +21,7 @@
 		<property name="residenceCountry" column="residenceCountry" type="string"/>
 	</class>
 	
-	<query name="findByAccountId">
+	<!-- <query name="findByAccountId">
 		<![CDATA[from CustomerRegistration where userId = :accountId]]>
 	</query>
 	
@@ -31,5 +31,5 @@
 	
 	<query name="update_registration">
 		<![CDATA[update CustomerRegistration set email = :emailId, firstName = :name, password = :password, telephone = :phone, mobile = :mobile where userId = :customerId]]>
-	</query>
+	</query> -->
 </hibernate-mapping>

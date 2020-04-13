@@ -78,7 +78,7 @@
 				
 				<div class="info-section">
 					<div class="name-section">
-						<a href="/admin" style="color: white;">Home</a> |  
+						<a href="/adminMVCHXML" style="color: white;">Home</a> |  
 						<a href="logout" style="color: white;">SignOut</a>
 					</div>
 				</div>

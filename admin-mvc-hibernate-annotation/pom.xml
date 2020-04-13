@@ -2,11 +2,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>greencard</groupId>
-  <artifactId>admin</artifactId>
+  <artifactId>adminMVCHXML</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>Admin</name>
+  <name>AdminMVCHXML</name>
   <url>http://maven.apache.org</url>
 
     <properties>
@@ -43,6 +43,12 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        
+        <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 
         <!-- Hibernate Dependency -->
         <dependency>
@@ -50,6 +56,7 @@
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
+        
         <!-- MySQL Connector Dependency -->
         <dependency>
             <groupId>mysql</groupId>
@@ -57,7 +64,7 @@
             <version>${mysql-connector.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <!-- Java Servlet and JSP dependencies -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -65,7 +72,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
@@ -79,6 +85,7 @@
 		    <artifactId>commons-logging</artifactId>
 		    <version>1.2</version>
 		</dependency>
+		
 		<!-- Could not persist without DOM4J -->
 		<dependency>
 		    <groupId>dom4j</groupId>
@@ -99,6 +106,7 @@
 		    <scope>test</scope>
 		</dependency>
     </dependencies>
+    
     <build>
         <plugins>
             <plugin>
@@ -114,4 +122,5 @@
             </plugin>
         </plugins>
     </build>
+    
 </project>

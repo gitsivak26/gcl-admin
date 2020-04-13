@@ -61,7 +61,7 @@
 				
 				<div class="info-section">
 					<div class="name-section">${agent.getFirstName()}  ${agent.getLastName()} ,
-						<a href="/admin" style="color: white;">Home</a> | 
+						<a href="/adminMVCHXML" style="color: white;">Home</a> | 
 						<a href="logout" style="color: white;">SignOut</a>
 					</div>
 				</div>
@@ -76,16 +76,6 @@
 						<input type="submit" id="paymentAction" value="PAYMENT ACTIONS" onclick="selectedAction('applicationAction')"/>
 					</form>
 				</div>
-				
-				<!-- <div class="select-links">
-					<ul>
-						<li><a href="gcl/actions/customerAction?nextAction=/actions/showApplication/">SHOW APPLICATION</a></li>
-						<li><a href="gcl/actions/editApplication.jsp">EDIT APPLICATION</a></li>
-						<li><a href="gcl/actions/reviewActions.jsp">REVIEW APPLICATION</a></li>
-						<li><a href="gcl/actions/applicationActions.jsp">APPLICATION / PAYMENT</a></li>
-						<li><a href="gcl/actions/photoUpload.jsp">PHOTO UPLOAD</a></li>
-					</ul>
-				</div> -->
 			</div>
 		</div>
 	</body>

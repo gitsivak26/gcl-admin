@@ -71,7 +71,7 @@
 				
 				<div class="info-section">
 					<div class="name-section">
-						<a href="/admin" style="color: white;">Home</a> |  
+						<a href="/adminMVCHXML" style="color: white;">Home</a> |  
 						<a href="logout" style="color: white;">SignOut</a>
 					</div>
 				</div>
@@ -88,7 +88,7 @@
 				<div class="application-section">
 					<div class="top-action">
 						<div class="delete-section">
-							<form name="deleteApplication" action="/admin/deleteApplication" method="post">
+							<form name="deleteApplication" action="/adminMVCHXML/deleteApplication" method="post">
 								<input type="hidden" name="customerId" value="${customerId}" />
 								<input class="action-btn" type="submit" name="deleteApplication" value="Delete Application" />
 							</form>
@@ -97,7 +97,7 @@
 						</div>
 					
 						<div class="skip-section">
-							<form name="skipFromSubmission" action="/admin/skipFromSubmission" method="post">
+							<form name="skipFromSubmission" action="/adminMVCHXML/skipFromSubmission" method="post">
 								<input type="hidden" name="customerId" value="${customerId}" />
 								<input class="action-btn" type="submit" name="skipFromSubmission" value="Skip Submission" />
 							</form>
@@ -106,7 +106,7 @@
 						</div>
 						
 						<div class="skip-section">
-							<form name="addToSubmission" action="/admin/addToSubmission" method="post">
+							<form name="addToSubmission" action="/adminMVCHXML/addToSubmission" method="post">
 								<input type="hidden" name="customerId" value="${customerId}" />
 								<input class="action-btn" type="submit" name="addToSubmission" value="Add To Submission" />
 							</form>
@@ -118,7 +118,7 @@
 					<!-- <div class="getAccount">
 						<h2>Enter AccountID to show application</h2>
 					
-						<form name="getApplication" action="/admin/showApplication" method="post">
+						<form name="getApplication" action="/adminMVCHXML/showApplication" method="post">
 							<label>Account ID :</label> <input type="text" name="accountId" value="" />
 							<input class="action-btn" type="submit" name="getApplication" value="Show Details" />
 						</form>

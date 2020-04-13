@@ -4,7 +4,7 @@ import greencard.admin.account.model.Agent;
 
 public interface AgentDAO {
 	
-	void save(Agent user);
+	void saveAgent(Agent agent);
 
 	Agent findByUserID(int agclid);
 

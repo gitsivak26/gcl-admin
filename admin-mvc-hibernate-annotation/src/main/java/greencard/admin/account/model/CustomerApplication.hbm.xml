@@ -18,8 +18,8 @@
 		<property name="applicationTakenBy" column="applicationTakenBy" type="int" />
 	</class>
 	
-	<query name="application_findByAccountId">
+	<!-- <query name="application_findByAccountId">
 		<![CDATA[from CustomerApplication where userId = :accountId]]>
-	</query>
+	</query> -->
 	
 </hibernate-mapping>
