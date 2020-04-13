@@ -61,10 +61,10 @@ public class AgentServicesImpl implements AgentServices {
 	}
 	
 	@Override
-	public boolean authenticate(String emailId, String password) {
-		System.out.println("Service - Authenticate using EmailID ...");
+	public boolean authenticate(Agent agent) {
+		String password = agent.getPassword();
 		
-		user = registrationDAO.findByEmailID(emailId);
+		user = registrationDAO.findByEmailID(agent.getEmail());
 		
 		System.out.println("Service - Password from Database = " + user.getPassword());
 		System.out.println("Service - Password from Request  = " + password);

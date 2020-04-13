@@ -179,5 +179,4 @@ public class CustomerServiceDAOImpl implements CustomerServiceDAO {
 		
 		return query.executeUpdate();
 	}
-
 }

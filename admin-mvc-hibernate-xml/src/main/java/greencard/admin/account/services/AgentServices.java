@@ -8,13 +8,14 @@ import greencard.admin.account.model.Agent;
 
 public interface AgentServices {
 	
-	void saveDetails(Agent user);
-	
 	boolean signedIn(HttpServletRequest request, HttpServletResponse response, HttpSession sessoin);
 
 	boolean isRegisteredUser(String email);
 	
-	boolean authenticate(String emailId, String password);
+	//boolean authenticate(String emailId, String password);
+	boolean authenticate(Agent agent);
+	
+	void saveDetails(Agent user);
 	
 	Agent getUserDetails(String emailId);
 	

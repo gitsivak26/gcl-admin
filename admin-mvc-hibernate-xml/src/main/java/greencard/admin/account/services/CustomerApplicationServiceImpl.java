@@ -1,8 +1,5 @@
 package greencard.admin.account.services;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -140,9 +137,6 @@ public class CustomerApplicationServiceImpl implements CustomerApplicationServic
 		
 		int userId = Integer.parseInt(customerId);
 		
-//		Date date= new Date();
-//		Timestamp timeStamp = new Timestamp(date.getTime());
-		
 		try {
 			
 			skipSubmission = customerServiceDAO.verifySkipStatus(userId);
@@ -152,13 +146,12 @@ public class CustomerApplicationServiceImpl implements CustomerApplicationServic
 				
 				skipSubmission = new SkipSubmission();
 				skipSubmission.setUserId(userId);
-				//skipSubmission.setUpdatedDate(timeStamp);
 			
 				skippedAccount = customerServiceDAO.skipAccount(skipSubmission);
 			
 				if (skippedAccount != 0) {
 					System.out.println("Inserted into SkipList....");
-					skipStatus = 1;
+					skipStatus = skippedAccount;
 				}
 			}
 			
@@ -195,7 +188,7 @@ public class CustomerApplicationServiceImpl implements CustomerApplicationServic
 			
 			if (skipSubmission == null) {
 				System.out.println("This account deleted from database ");
-				addSubmissionStatus = 1;
+				addSubmissionStatus = userId;
 			}
 			
 		} catch (Exception e) {

@@ -76,16 +76,6 @@
 						<input type="submit" id="paymentAction" value="PAYMENT ACTIONS" onclick="selectedAction('applicationAction')"/>
 					</form>
 				</div>
-				
-				<!-- <div class="select-links">
-					<ul>
-						<li><a href="gcl/actions/customerAction?nextAction=/actions/showApplication/">SHOW APPLICATION</a></li>
-						<li><a href="gcl/actions/editApplication.jsp">EDIT APPLICATION</a></li>
-						<li><a href="gcl/actions/reviewActions.jsp">REVIEW APPLICATION</a></li>
-						<li><a href="gcl/actions/applicationActions.jsp">APPLICATION / PAYMENT</a></li>
-						<li><a href="gcl/actions/photoUpload.jsp">PHOTO UPLOAD</a></li>
-					</ul>
-				</div> -->
 			</div>
 		</div>
 	</body>

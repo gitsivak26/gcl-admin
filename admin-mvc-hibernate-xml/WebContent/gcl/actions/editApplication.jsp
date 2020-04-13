@@ -109,22 +109,22 @@
 								<li>
 									First Name : 
 										<input type="text" name="customerName" id="customerName" value="${registration.getFirstName()}" style="display:none">
-										<input type="button" id="firstName" value="Enable Name" onclick="enable('customerName')">
+										<input type="button" id="firstName" value="Update Name" onclick="enable('customerName')">
 								</li>
 								<li>
 									Password  : 
 										<input type="text" name="customerPassword" id="customerPassword" value="${registration.getPassword()}" style="display:none">
-										<input type="button" id="password" value="Enable Password" onclick="enable('customerPassword')">
+										<input type="button" id="password" value="Update Password" onclick="enable('customerPassword')">
 								</li>
 								<li>
 									Phone Number : 
 									<input type="text" name="customerPhone" id="customerPhone" value="${registration.getTelephone()}" style="display:none">
-									<input type="button" id="phone" value="Enable Phone" onclick="enable('customerPhone')">
+									<input type="button" id="phone" value="Update Phone" onclick="enable('customerPhone')">
 								</li>
 								<li>
 									Mobile Number : 
 									<input type="text" name="customerMobile" id="customerMobile" value="${registration.getMobile()}" style="display:none">
-									<input type="button" id="mobile" value="Enable Mobile" onclick="enable('customerMobile')">
+									<input type="button" id="mobile" value="Update Mobile" onclick="enable('customerMobile')">
 								</li>
 							</ul>
 							

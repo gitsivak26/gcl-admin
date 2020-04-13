@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import greencard.admin.account.model.Applicant;
 import greencard.admin.account.model.CustomerApplication;
 import greencard.admin.account.model.CustomerContact;
-import greencard.admin.account.model.CustomerPhotograph;
 import greencard.admin.account.model.CustomerRegistration;
 import greencard.admin.account.services.CustomerApplicationService;
 
